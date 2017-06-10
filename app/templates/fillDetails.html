@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <style>
+         body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    </style>
+</head>
+
+<body>
+
+     <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">prowessIndex</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://github.com/novatoscript/prowessIndex">Fork Me on Github</a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="container">
+
+        <div class="row container">
+            <h4> Your Programme is {{ data.programme }} </h4>
+            <blockquote>
+                Please Enter your PRN and your grades for following courses.</br>
+                Keep NIL grade for courses that you haven't taken.</br>
+                Click on Proceed button.</br>
+            </blockquote>
+        </div>
+
+        <div class="row content">
+            <form action="/prowessIndexReport" method="POST">
+                <input type="hidden" name="programme" value="{{ data.programme }}">
+                <input name="prn" type="text" placeholder="PRN" required>
+                <table>
+                {% for course in data.courses%}
+                    <tr>
+                    <td>{{ course.0 }} {{ course.1 }}</td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-NIL" value="NIL" checked="checked"><label for="{{course.0}}-NIL">NIL</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-AA" value="AA"><label for="{{course.0}}-AA">AA</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-AB" value="AB"><label for="{{course.0}}-AB">AB</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-BB" value="BB"><label for="{{course.0}}-BB">BB</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-BC" value="BC"><label for="{{course.0}}-BC">BC</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-CC" value="CC"><label for="{{course.0}}-CC">CC</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-CD" value="CD"><label for="{{course.0}}-CD">CD</label></td>
+                    <td><input type="radio" name="{{ course.0+':'+course.1  }}" id="{{ course.0 }}-DD" value="DD"><label for="{{course.0}}-DD">DD</label></td>
+                    </tr>
+                {% endfor %}
+                </table>
+                <button class="btn waves-effect waves-light" type="submit" value="prowessIndex" name="prowessIndex">Proceed</button>
+            </form>
+        </div>
+    </div>
+
+   <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <a href="https://github.com/novatoscript/">Find us on Github</a><br>
+                    Contact us :9881464434;7020038870<br>
+                    Drop us mail :novatoscript@gmail.com
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

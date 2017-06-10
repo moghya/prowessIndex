@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prowessIndex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</head>
+<style>
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+</style>
+<body>
+
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">prowessIndex</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://github.com/novatoscript/prowessIndex">Fork Me on Github</a></li>
+      </ul>
+    </div>
+    </nav>
+
+    <div class="container">
+        <div class="row content">
+             <h3>prowessIndex</h3>
+             <div class="row">
+                 <blockquote>
+                     What does 9 CGPA mean in B.Tech Information Technology means ?</br>
+                     This webapp is an implementation of paper Making Sense of Numbers...</br>
+                     Authors have proposed a method to derive inferences out of the numbers using simple Mathematics.
+                     Read paper <a href="">here</a></br>
+                     Here you get prowessIndex of yours on the basis of grades in courses you took at WCE,Sangli.</br>
+                     This is an Open Source Project by novatoscript, please feel free to fork and make changes in it.</br>
+                     For now data is available for a few Programmes, write us here to have your programme in our system.</br>
+                     If you like our work please consider giving a Star to this Repo and Share with your friends.Thank you</br>
+                 </blockquote>
+             </div>
+
+        </div>
+
+        <div class="row content">
+            <div class="col m6">
+                <h5>Generate New Report</h5>
+                <form action="/fillDetails" method="POST">
+                    <select name="programme" required>
+                        <option value="">--Select Your Programme--</option>
+                        <option value="BIT2014">2014BIT Programme</option>
+                    </select>
+                    <button class="btn waves-effect waves-light" type="submit" name="proceed" value="Proceed">Proceed</button>
+                </form>
+            </div>
+            <div class="col m6">
+                <h5>Get Already Generated Report</h5>
+                <form action="/prowessIndexReport" method="GET">
+                    <select name="prg" required>
+                        <option value="">--Select Your Programme--</option>
+                        <option value="BIT2014">2014BIT Programme</option>
+                    </select>
+                    <input type="text" name="prn" placeholder="PRN" required>
+                    <button class="btn waves-effect waves-light" type="submit" name="proceed" value="Proceed">Proceed</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <a href="https://github.com/novatoscript/">Find us on Github</a><br>
+                    Contact us :9881464434;7020038870<br>
+                    Drop us mail :novatoscript@gmail.com
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+</html>

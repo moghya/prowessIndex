@@ -1,0 +1,36 @@
+course_id,course_name,a,b,c,d,e,f,g,h,i,j,k,l
+3MA204,Linear Algebra,6,3,0,0,2,0,0,0,1,2,0,0
+3IT201,Descrete Mathematics,9,5,5,4,9,0,0,0,6,0,3,3
+3IT202,Data Structures,2,0,3,0,3,0,0,0,0,0,6,6
+3IT203,Processor Architechture,1,2,7,0,1,0,0,0,1,0,1,2
+3IT204,Data Communication and Networking,4,9,5,0,0,0,3,0,0,0,0,0
+3IT252,Data Structures Lab,3,0,5,6,3,0,0,0,0,0,6,8
+3IT253,Processor Architechture Lab,1,2,7,0,1,0,0,0,1,0,1,2
+3IT255,Programming Lab - I,0,2,3,0,5,0,0,0,0,0,5,3
+3IT281,Mini Project - I,0,0,3,0,4,0,0,0,0,0,6,5
+3MA215,Statistics and Fuzzy Systems,6,3,0,0,2,0,0,0,1,2,0,0
+3IT211,Theory of Computation,3,5,4,0,6,0,5,2,0,0,3,2
+3IT212,Computer Organization and Architechture,0,2,6,0,5,0,0,0,0,1,1,2
+3IT213,Computer and Wireless Networks,0,0,7,0,6,0,0,2,0,1,0,3
+3IT214,System Programming,0,2,3,0,5,0,0,0,0,0,3,3
+3IT263,Computer and Wireless Networks Lab,0,0,7,0,6,0,0,2,0,1,0,3
+3IT265,Programming Lab - II,0,2,3,0,5,0,0,0,0,0,5,3
+3IT282,Mini Project - II,0,0,3,0,4,0,0,0,0,0,6,5
+3IT321,Advanced Database Engineering,0,3,2,0,5,0,2,0,0,0,0,1
+3IT322,Unix Operating System,0,2,3,3,0,0,0,0,2,0,0,2
+3IT323,Information Theory,1,2,2,3,0,0,0,0,0,0,0,3
+3IT324,Information Storage and Management,2,2,3,0,1,0,0,0,0,0,0,3
+3IT371,Unix Operating System Lab,0,5,0,5,1,0,0,0,0,0,0,2
+3IT372,ParalleL Programming Lab,3,3,3,0,7,0,0,0,0,0,0,0
+3IT342,Mini Project - IV,0,3,0,0,2,0,1,0,0,2,3,1
+3IT333,IoT systems and applications,3,0,0,6,1,0,0,0,0,2,0,0
+3IT331,Machine Learning ,6,5,0,2,0,0,0,0,0,0,0,0
+3IT301,Database Engineering,5,0,2,0,0,0,0,2,0,0,0,3
+3IT302,Software Engineering Design,5,1,0,1,2,0,0,0,0,0,0,2
+3IT303,Operating System,0,0,2,0,3,0,0,0,0,0,7,2
+3IT304,Computer Algorithm ,3,5,0,0,3,0,0,0,0,0,0,3
+3IT313,Computer Graphics & Multimedia,3,0,5,0,0,0,0,0,0,0,3,2
+3IT312,Cloud Computing ,3,0,2,3,3,0,0,0,0,0,0,3
+3IT351,Database Engineering Lab,0,3,2,0,2,0,0,1,0,0,2,2
+3IT352,Web Technology,0,2,1,0,3,0,3,0,0,0,0,5
+3IT341,Mini-Project III,0,3,0,0,2,0,1,0,0,2,2,1

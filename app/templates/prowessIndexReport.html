@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prowessIndex{{ data.prn }}</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <style>
+        table,th,td{
+            border: solid black 1px;
+        }
+        td,th{
+            padding: 5px 5px;
+        }
+        h3{
+            text-align: center;
+        }
+            body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    </style>
+<body>
+
+     <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">prowessIndex</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://github.com/novatoscript/prowessIndex">Fork Me on Github</a></li>
+          </ul>
+        </div>
+        </nav>
+
+     <div class="container">
+        <div class="row content">
+
+            <h3>prowessIndex Report</h3>
+
+            <blockquote>
+                Student with PRN : {{ data.prn }} enrolled in Programme {{ data.programme }} at Walchand College of Engineering has following prowessIndex.<br>
+                This prowessIndex is calculated on the basis of Performance in Courses taken during {{ data.programme }}. Courses are enlisted below.
+                You can share this report using <a href="/prowessIndexReport?prg={{ data.programme }}&prn={{ data.prn }}" >reportLink</a>
+            </br><small><b><i>Note: We have used the grades obtained by students and believe that the only factor for the performance attained by student is Understanding and Knowledge and no other factors.</br>
+            Note: This prowessIndex is mere application of Mathematics and in reallity student may not exhibit results generated here.</br>
+            Note: Please verify Grade Cards of Student, without grade cards consisting following courses this report is void and does not hold any value.</i></b></small>
+            </blockquote>
+        </div>
+
+        <div class="row content">
+            <table>
+            <tr><th></th><th>Programme Outcome</th><th>prowessIndex</th><tr>
+            {% for prowessIndex in data.prowessIndexResult %}
+                <tr>
+                    <td>{{ prowessIndex.0.0 }}</td>
+                    <td>{{ prowessIndex.0.1 }}</td>
+                    <td>{{ prowessIndex.1 }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+
+        <div class="row content">
+
+            <canvas id="chart" width="600" height="400"></canvas>
+
+        </div>
+
+        <div class="row content">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">Courses Taken</div>
+                    <div class="collapsible-body">
+                        <table>
+                            <tr><th>Course Id</th><th>Course Name</th><th>Grade</th></tr>
+                            {% for course in data.courses %}
+                                {% if course.2!='NIL' %}
+                                    <tr>
+                                        <td>{{ course.0 }}</td>
+                                        <td>{{ course.1 }}</td>
+                                        <td>{{ course.2 }}</td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+     </div>
+
+     <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col m12">
+                    <a href="https://github.com/novatoscript/">Find us on Github</a><br>
+                    Contact us :9881464434;7020038870<br>
+                    Drop us mail :novatoscript@gmail.com
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+    var barChartData = {
+        labels : [
+                    {% for prowessIndex in data.prowessIndexResult %}
+                        "{{prowessIndex.0.0}}",
+                    {% endfor %}
+        ],
+        datasets : [
+            {
+                label: 'prowessIndex_' + '{{ data.prn }}',
+                data : [
+                    {% for prowessIndex in data.prowessIndexResult %}
+                        {{prowessIndex.1}},
+                    {% endfor %}
+                ]
+            }
+        ]
+    };
+
+    var ctx = document.getElementById("chart").getContext("2d");
+    window.onload = function() {
+
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'prowessIndex Bar Graph'
+
+                }
+            }
+        });
+    }
+
+
+</script>
+</body>
+</html>
